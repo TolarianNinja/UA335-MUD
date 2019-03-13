@@ -1,0 +1,409 @@
+<Game>
+	<!--
+		All rooms must have:
+			vnum of room
+			name of room (a title that will be at the top of the room in look)
+			description of room (a few sentences describing the room)
+			exits from the room (which room which exit should go to)
+		
+		<room id=last+1>
+			<vnum>id</vnum>
+			<name>Name of Room</name>
+			<desc>Desc of Room, will read in newlines but make sure to align to beginning of line</desc>
+			<exits>
+				<direction>vnum of target room</direction>
+			</exits>
+		</room>
+	-->
+	<room id="1">
+		<vnum>1</vnum>
+		<name>A White Room</name>
+		<desc>A completely empty room.  It is a perfect cube, five meters in each direction. 
+There is a round hole going in each direction, however they are impossible to 
+see through.</desc> 
+		<exits>
+			<north>2</north>
+			<east>3</east>
+			<south>4</south>
+			<west>5</west>
+			<up>6</up> 
+			<down>7</down>
+		</exits>
+	</room>
+	
+	<room id="2">
+		<vnum>2</vnum>
+		<name>A Red Room</name>
+		<desc>Another non-descript room.</desc>
+		<exits>
+			<south>1</south>
+		</exits>
+	</room>
+	
+	<room id="3">
+		<vnum>3</vnum>
+		<name>A Blue Room</name>
+		<desc>Another non-descript room.</desc> 
+		<exits>
+			<west>1</west>
+		</exits>
+	</room>
+	
+	<room id="4">
+		<vnum>4</vnum>
+		<name>A Yellow Room</name>
+		<desc>Another non-descript room.</desc> 
+		<exits>
+			<north>1</north>
+		</exits>
+	</room>
+	
+	<room id="5">
+		<vnum>5</vnum>
+		<name>A Purple Room</name>
+		<desc>Another non-descript room.</desc> 
+		<exits>
+			<east>1</east>
+		</exits>
+	</room>
+	
+	<room id="6">
+		<vnum>6</vnum>
+		<name>An Orange Room</name>
+		<desc>Another non-descript room.</desc> 
+		<exits>
+			<down>1</down>
+		</exits>
+	</room>
+	
+	<room id="7">
+		<vnum>7</vnum>
+		<name>A Green Room</name>
+		<desc>Another non-descript room.</desc> 
+		<exits>
+			<up>1</up>
+		</exits>
+	</room>
+	
+	<!--
+		All items need to have:
+			vnum
+			type (the type of item so it builds with the correct functionality)
+			name (any words that can be used to interact with this object)
+			short description (what is shown in inventory and in use)
+			long description (what is shown when a player looks at it)
+			room description (what is shown when it is on the floor of a room)
+			wear location (where on the body the item is worn, inventory if 
+				can't be worn, blank if can't be picked up)
+				
+			some items have extra tags based on the type of item
+				portal has: destination -  the vnum that the portal will transport to
+				drink has:	liquidcolor - the description of the liquid that the character drinks
+							maxdrinks - maximum number of drinks in the container
+							startingdrinks - number of drinks that the container starts with
+		
+		<item id=last+1>
+			<vnum>id</vnum>
+			<type>type</type>
+			<name>name</name>
+			<short>short description</short>
+			<long>long description</long>
+			<room>room description</room>
+			<wear>wear location</wear>
+		</item>
+	-->
+	
+	<item id="1">
+		<vnum>1</vnum>
+        <type></type>
+		<name>blue sphere</name>
+        <short>a blue sphere</short>
+        <long>A blue sphere that pulses with light.</long>
+        <room>A blue sphere floats here.</room>
+        <wear>float</wear>
+    </item>
+    
+    <item id="1">
+		<vnum>1</vnum>
+		<type></type>
+		<name>blue sphere</name>
+        <short>a blue sphere</short>
+        <long>A blue sphere that pulses with light.</long>
+        <room>A blue sphere floats here.</room>
+        <wear>float</wear>
+    </item>
+    
+    <item id="2">
+		<vnum>2</vnum>
+		<type>armor</type>
+		<name>red sphere</name>
+        <short>a red sphere</short>
+        <long>A red sphere that pulses with evil.</long>
+        <room>A red sphere floats here.</room>
+        <wear>float</wear>
+    </item>
+    
+    <item id="3">
+		<vnum>3</vnum>
+		<type>armor</type>
+		<name>journalist glasses weird misshapen</name>
+        <short>journalist's glasses</short>
+        <long>A pair of glasses, one lens a red circle, the other a green rectangle.</long>
+        <room>A weirdly misshapen pair of glasses sits here.</room>
+        <wear>face</wear>
+    </item>
+    
+    <item id="4">
+		<vnum>4</vnum>
+		<type>drink</type>
+		<name>glass water</name>
+        <short>a glass of water</short>
+        <long>A pint-sized glass of water.</long>
+        <room>A pint glass full of water sits here.</room>
+        <wear>lefthand</wear>
+        <liquidcolor>clear</liquidcolor>
+        <maxdrinks>3</maxdrinks>
+        <startingdrinks>3</startingdrinks>
+    </item>
+    
+    <item id="5">
+		<vnum>5</vnum>
+		<type>container</type>
+		<name>bag holding pouch brown</name>
+        <short>a bag of holding</short>
+        <long>A small brown pouch that is able to stretch over and fit anything inside.</long>
+        <room>A small brown pouch is in the corner.</room>
+        <wear>inventory</wear>
+    </item>
+    
+    <item id="6">
+		<vnum>6</vnum>
+		<type>portal</type>
+		<name>blue shimmering portal</name>
+        <short>a shimmering portal</short>
+        <long>A shimmering blue portal that leads back to the center of reality.</long>
+        <room>A shimmering blue portal stands in the center of the room.</room>
+        <wear></wear>
+        <destination>1</destination>
+    </item>
+    
+    <item id="7">
+    	<vnum>7</vnum>
+    	<type>drink</type>
+    	<name>purple potion</name>
+    	<short>a purple potion</short>
+    	<long>A glowing purple potion, full of something unknown.</long>
+    	<room>A purple potion is sitting here ominously.</room>
+    	<wear>inventory</wear>
+    	<liquidcolor>purple</liquidcolor>
+    	<maxdrinks>3</maxdrinks>
+    	<startingdrinks>3</startingdrinks>
+    	<effect>
+    		<type>stat</type>
+    		<arg>hp</arg>
+    		<intensity>12</intensity>
+    	</effect>
+    </item>
+    
+    <item id="8">
+    	<vnum>8</vnum>
+    	<type>drink</type>
+    	<name>black potion</name>
+    	<short>a black potion</short>
+    	<long>A glowing black potion, full of something unknown.</long>
+    	<room>A black potion is sitting here ominously.</room>
+    	<wear>inventory</wear>
+    	<liquidcolor>black</liquidcolor>
+    	<maxdrinks>3</maxdrinks>
+    	<startingdrinks>3</startingdrinks>
+    	<effect>
+    		<type>stat</type>
+    		<arg>hp</arg>
+    		<intensity>-15</intensity>
+    	</effect>
+    	<effect>
+    		<type>stat</type>
+    		<arg>energy</arg>
+    		<intensity>-15</intensity>
+    	</effect>
+    	<effect>
+    		<type>stat</type>
+    		<arg>stamina</arg>
+    		<intensity>-15</intensity>
+    	</effect>
+    </item>
+    
+    <item id="9">
+    	<vnum>9</vnum>
+    	<type>edible</type>
+    	<name>delicious burrito carne asada</name>
+    	<short>a carne asada burrito</short>
+    	<long>A carne asada burrito, made with a flour tortilla, guacamole, beans,
+rice, and hot sauce.</long>
+		<room>A delicious looking burrito sits here.</room>
+		<wear>inventory</wear>
+		<effect>
+			<type>stat</type>
+			<arg>stamina</arg>
+			<intensity>10</intensity>
+		</effect>
+    </item>
+    
+    <item id="10">
+    	<vnum>10</vnum>
+    	<type>drink</type>
+    	<name>electric kool aid kool-aid</name>
+    	<short>a glass of electric kool-aid</short>
+    	<long>A glass of Ken Kesey and the Merry Prankster's famous electric kool-aid.</long>
+    	<room>A glass of pinkish liquid sits here.</room>
+    	<wear>inventory</wear>
+    	<liquidcolor>pinkish</liquidcolor>
+    	<maxdrinks>-1</maxdrinks>
+    	<startingdrinks>2</startingdrinks>
+    	<effect>
+    		<type>binary</type>
+    		<intensity>1</intensity>
+    		<duration>5</duration>
+    	</effect>
+    </item>
+    
+    <item id="11">
+    	<vnum>11</vnum>
+    	<type>drink</type>
+    	<name>bottle hard cider</name>
+    	<short>a bottle of hard cider</short>
+    	<long>A bottle of crisp apple hard cider. Delicious.</long>
+    	<room>A bottle of hard cider sits here.</room>
+    	<wear>inventory</wear>
+    	<liquidcolor>amber</liquidcolor>
+    	<maxdrinks>2</maxdrinks>
+    	<startingdrinks>2</startingdrinks>
+    	<effect>
+    		<type>drunk</type>
+    		<intensity>1</intensity>
+    		<duration>5</duration>
+    	</effect>
+    </item>
+    
+    <item id="12">
+    	<vnum>12</vnum>
+    	<type>hackable</type>
+    	<name>atm automated teller machine</name>
+    	<short>an ATM</short>
+    	<long>An automated teller machine for the Hypercompuglobalmeganet Bank.</long>
+    	<room>An automated teller machine is built into the wall.</room>
+    	<creditaward>50</creditaward>
+    	<wear></wear>
+    </item>
+    
+    <item id="13">
+    	<vnum>13</vnum>
+    	<type>hackable</type>
+    	<name>drink dispensor</name>
+    	<short>the drink dispensor</short>
+    	<long>A black machine that mixes drinks.</long>
+    	<room>A drink dispensor sits on the counter.</room>
+    	<itemaward>8 1 5 3 4 7</itemaward>
+    	<wear></wear>
+    </item>
+    
+    <!--
+		All mobs need to have:
+			vnum of mob
+			name (any words that can be used to interact with this mob)
+			short description (what is shown during interaction)
+			long description (what is shown when a player looks at it)
+			room description (what is shown when it is in a room that is looked in)
+		
+		<mob id=last+1>
+			<vnum>id</vnum>
+			<name>name</name>
+			<short>short description</short>
+			<long>long description</long>
+			<room>room description</room>
+		</mob>
+	-->
+    
+    <mob id="1">
+    	<vnum>1</vnum>
+    	<name>Spider Jerusalem Crazy Bald Journalist</name>
+    	<short>Spider Jerusalem</short>
+    	<long>Spider Jerusalem, the infamous outlaw journalist.  His tall body is covered 
+in tattoos, from a sun on his arm to a spider on his forehead.  He is 
+wearing black pants and a black shirt which is open to show is chest.</long>
+    	<room>A crazy, bald journalist stands here, raving about something.</room>
+    </mob>
+    
+    <mob id="2">
+    	<vnum>2</vnum>
+    	<name>Bartender</name>
+    	<short>a bartender</short>
+    	<long>Six feet tall and bald, the bartender is wearing a gray shirt and black pants.</long>
+    	<room>A bartender is standing behind the counter, polishing a glass</room>
+    	<type>shopkeep</type>
+    </mob>
+    
+    <!--
+		All roomresets need to have:
+			vnum of room
+			vnums of items to spawn in room
+			vnum of mob to spawn in
+			vnums of items the mob should spawn in with
+			list of places where each item should be worn
+		
+		<roomreset id="1">
+        	<vnum>room vnum</vnum>
+        	<item>item vnums</item>
+        	<mob>
+        		<vnum>mob vnum</vnum>
+	        	<item>vnums mob equipment</item>
+    	    	<wear>mob equipment locations</wear>
+        		</mob>
+    	</roomreset>
+	-->
+	
+    <roomreset id="1">
+        <vnum>1</vnum>
+        <item>1 2 4</item>
+    </roomreset>
+    
+    <roomreset id="2">
+        <vnum>2</vnum>
+        <item>2 2 2</item>
+    </roomreset>
+    
+    <roomreset id="3">
+        <vnum>3</vnum>
+        <item>12 13</item>
+        <mob>
+          <vnum>1</vnum>
+          <item>3</item>
+          <wear>face</wear>
+        </mob>
+    </roomreset>
+    
+    <roomreset id="4">
+        <vnum>4</vnum>
+        <item>4</item>
+        <mob>
+        	<vnum>2</vnum>
+        	<item>1 2 3 4 5 7 9</item>
+        	<wear>inventory inventory inventory inventory inventory inventory inventory</wear>
+        </mob>
+    </roomreset>
+    
+    <roomreset id="5">
+        <vnum>5</vnum>
+        <item>5 10 11</item>
+    </roomreset>
+    
+    <roomreset id="6">
+        <vnum>6</vnum>
+        <item>6 9</item>
+    </roomreset>
+    
+    <roomreset id="7">
+    	<vnum>7</vnum>
+    	<item>7 8</item>
+    </roomreset>
+</Game>
